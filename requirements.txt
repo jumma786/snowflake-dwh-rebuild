@@ -1,0 +1,2 @@
+duckdb
+snowflake-connector-python
