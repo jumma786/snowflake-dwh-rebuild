@@ -2,24 +2,27 @@
 
 Rebuilds the star schema and analytics layer from
 [enterprise-dwh-analytics](https://github.com/jumma786/enterprise-dwh-analytics)
-(originally Teradata + DuckDB) on Snowflake — a platform several job
-descriptions I've applied to list explicitly and that I haven't used
-professionally.
+(originally Teradata + DuckDB) on Snowflake — a platform I use at work, but had
+not previously migrated a warehouse onto from another engine.
 
 ## Why this project
 
-Snowflake shows up as a required or preferred tool on roles I'm targeting.
-Rather than just reading Snowflake docs, I rebuilt a warehouse I'd already
-designed properly once (real 6.36M-row transaction data, a working star
-schema, a validated fraud scorecard) on the new platform, so the exercise is
-about learning the platform's differences, not inventing a toy example.
+I query Snowflake day to day at work, but running a *full platform migration*
+onto it — schema translation, bulk export, load pipeline — is a different
+exercise from querying an environment someone else built. Rather than just
+read about the differences, I rebuilt a warehouse I'd already designed
+properly once (real 6.36M-row transaction data, a working star schema, a
+validated fraud scorecard) on the new platform, so the exercise is about the
+platform's differences rather than a toy example.
 
-**Honesty note:** the Snowflake load itself needs a Snowflake account, which
-I don't have yet — see [`SIGNUP_CHECKLIST.md`](SIGNUP_CHECKLIST.md). Everything
-that doesn't require an account is built and tested: the schema translation,
-the real data export, and the load/analytics scripts are ready to run the
-moment the account exists. I'm not claiming hands-on production Snowflake
-experience — this documents a self-directed platform-migration exercise.
+**Honesty note:** the load step needs a Snowflake account of my own, which I
+don't have — see [`SIGNUP_CHECKLIST.md`](SIGNUP_CHECKLIST.md). Everything that
+doesn't require one is built and tested: the schema translation, the real data
+export, and the load/analytics scripts are ready to run the moment an account
+exists. To be precise about what this repo does and does not show — I use
+Snowflake in my professional work, but **this particular migration has not been
+executed end to end against a live Snowflake instance.** It documents a
+self-directed platform-migration exercise, not a production deployment.
 
 ## What's done vs what's pending
 
